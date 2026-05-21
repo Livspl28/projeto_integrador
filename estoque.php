@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de estoque</title>
     <link rel="stylesheet" href="./css/estoque.css">
+     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 </head>
 <body>
 
-<div class="container">
- <div class="produtos-box">
-    <h4>Total</h4>
+<?php
+ include 'partials/sidebar.php'
+?>
 
+<div class="container">
+ <div class="card-box produtos-box">
+    <h4>Total</h4>
  </div>
 
  
- <div class="produtosbaixos-box">
+ <div class="card-box produtosbaixos-box">
      <h4>Perto do mínimo</h4>
  </div>
 
 
  
-<div class="produtosabaixo-box">
+<div class="card-box produtosabaixo-box">
      <h4>Abaixo do Mínimo</h4>
  </div>
 
 
  
- <div class="valor-box">
+ <div class="card-box valor-box">
      <h4>Valor total</h4>
  </div>
  
@@ -36,7 +40,6 @@
 
 <div class="box-filtro"></div>
 
-<center>
             <section class="box-tabela">
                     <table>
                         <thead>
@@ -52,7 +55,50 @@
                         </thead>
                         <tbody> 
                             <tr>
-                                <td>ghdhdh</td>
+                                <td>133</td>
+                                <td>Voce</td>
+                                <td>3523</td>
+                                <td>6757</td>
+                                <td>ativp</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td><i class="bi bi-eye"></i></td>
+                            </tr>
+
+                            <tr>
+                                <td>133</td>
+                                <td>hnhghn</td>
+                                <td>3523</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td><i class="bi bi-eye"></i></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>133</td>
+                                <td>hnhghn</td>
+                                <td>3523</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td><i class="bi bi-eye"></i></td>
+                            </tr>
+
+                            <tr>
+                                <td>133</td>
+                                <td>hnhghn</td>
+                                <td>3523</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td>hnhghn</td>
+                                <td><i class="bi bi-eye"></i></td>
+                            <tr>
+
+                                <td>133</td>
                                 <td>hnhghn</td>
                                 <td>3523</td>
                                 <td>hnhghn</td>
@@ -61,8 +107,9 @@
                                 <td>hnhghn</td>
                                 <td>hnhghn</td>
                             </tr>
+
                             <tr>
-                                <td>ghdhdh</td>
+                                <td>133</td>
                                 <td>hnhghn</td>
                                 <td>3523</td>
                                 <td>hnhghn</td>
@@ -71,8 +118,9 @@
                                 <td>hnhghn</td>
                                 <td>hnhghn</td>
                             </tr>
+
                             <tr>
-                            <td>ghdhdh</td>
+                                <td>133</td>
                                 <td>hnhghn</td>
                                 <td>3523</td>
                                 <td>hnhghn</td>
@@ -81,47 +129,9 @@
                                 <td>hnhghn</td>
                                 <td>hnhghn</td>
                             </tr>
+
                             <tr>
-                                <td>ghdhdh</td>
-                                <td>hnhghn</td>
-                                <td>3523</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                            <tr>
-                            <td>ghdhdh</td>
-                                <td>hnhghn</td>
-                                <td>3523</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                            </tr>
-                            <tr>
-                                <td>ghdhdh</td>
-                                <td>hnhghn</td>
-                                <td>3523</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                            </tr>
-                            <tr>
-                            <td>ghdhdh</td>
-                                <td>hnhghn</td>
-                                <td>3523</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                                <td>hnhghn</td>
-                            </tr>
-                            <tr>
-                            <td>ghdhdh</td>
+                                <td>133</td>
                                 <td>hnhghn</td>
                                 <td>3523</td>
                                 <td>hnhghn</td>
@@ -167,6 +177,5 @@
                         </tbody>
                     </table>
             </section>
-            <center>
     </body>
 </html>
