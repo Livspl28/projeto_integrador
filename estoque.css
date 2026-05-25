@@ -13,7 +13,7 @@ body{
     max-height: 745px;
     border-radius: 10px;
     overflow-y: auto;
-    box-shadow: 12px 12px 13px #000000a2;
+    box-shadow: 12px 12px 13px rgba(0, 27, 107, 0.712);
 
     background-color: #60a5fa;
 
@@ -72,7 +72,8 @@ table
 }
 
 h4{
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    color: #1e3a8a;
 }
 
 .card-box{
@@ -88,45 +89,32 @@ h4{
     transition: 0.5s;
 }
 
-.produtos-box
-{
-    background-color: #a6a6a6;
-}
-
-.produtosbaixos-box
-{
-    background-color: #ffde59;
-}
-
-.produtosabaixo-box
-{
-    background-color: #f04444;
-}
+.produtos-box, 
+.produtosbaixos-box, 
+.produtosabaixo-box,
 .valor-box
 {
-    background-color: #00bf63;
+    background-color: #f3f3f3;
 }
 
 .card-box:hover{
-  background: #000000a2;
+  background: #f3f3f3;
     border-radius: 10px;
     transition: 0.5s;
     transform: scale(1.03);
 }
 
 .produtos-box:hover{
-   
-    box-shadow: 12px 10px 13px #a6a6a6;
+    box-shadow: 12px 10px 13px #91c1f7;
 }
 .produtosbaixos-box:hover{
-    box-shadow: 12px 10px 13px #ffde59;
+    box-shadow: 12px 10px 13px #f7e291;
 } 
 .produtosabaixo-box:hover{
-    box-shadow: 12px 10px 13px #f04444;
+    box-shadow: 12px 10px 13px #f79191;
 } 
-
 .valor-box:hover{
-    box-shadow: 12px 10px 13px #00bf63;
+    box-shadow: 12px 10px 13px #94f791;
 }
 
 
@@ -141,3 +129,4 @@ h4{
 .estoque_zerado{
     color:black !important;
 }
+
