@@ -6,8 +6,7 @@
     $css = './css/estoque.css';
     require_once 'crud.php';
     require_once 'partials/sidebar.php';  
-
-
+    
     if (isset($_GET['erro'])){
         $erro = $_GET['erro'];
         if ($erro === 'erro_linkinvalido'){	
@@ -17,7 +16,6 @@
         echo '<h1 class="msg_erro"> Um erro desconhecido ocorreu</h1>';
         }	
     }	
-
 ?>
 
     <body>
@@ -52,6 +50,7 @@
 </div>
 
 
+<h1>Tabela geral</h1>
             <main class="box-tabela">
                 <table>
                     <thead>
@@ -113,7 +112,7 @@
 </main>
 
 
-        <section class="box-tabela">
+        <section class="box-produtos-abaixo">
            <table>
                     <thead>
                         <tr>
