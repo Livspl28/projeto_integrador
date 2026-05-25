@@ -117,7 +117,6 @@ h4{
     box-shadow: 12px 10px 13px #94f791;
 }
 
-
 .estoque_baixo{
     color: yellow !important;
 }
@@ -127,6 +126,30 @@ h4{
 }
 
 .estoque_zerado{
-    color:black !important;
+    color:darkred !important;
 }
 
+.msg_erro{
+    color:black;
+    text-align:center;
+}
+
+.box-produtos-abaixo
+{
+    margin-top: 50px;
+    width: 1110px;
+    min-height: 640px;
+    max-height: 640px;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: 12px 12px 13px rgba(0, 27, 107, 0.712);
+
+    background-color: #60a5fa;
+
+    border-bottom: 10px solid var(--cor-primaria);
+    margin: 50px auto;
+}
+
+h1{
+    color: #5ae24e;
+}
