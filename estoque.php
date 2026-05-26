@@ -50,22 +50,25 @@
 </div>
 
 
-<h1>Tabela geral</h1>
+<h1>Produtos geral</h1>
             <main class="box-tabela">
                 <table>
                     <thead>
                         <tr>
+                            <th>Imagem</th>
                             <th>ID</th>
                             <th>Nome</th>
                             <th>PN</th>
                             <th>Estoque</th>
+                            <th>Status</th>
                             <th>Categoria</th>
 			                <th>Custo</th>   
 			                <th>Descrição</th>
-                            <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
+
+
+                    
                     <?php
                         require_once 'crud.php';
                         $produtos = readAll($pdo, 'produtos');
@@ -83,7 +86,7 @@
                             elseif($produto['estoque'] <= 0){
                                 $dados_atualizados = [
                                 'estoque' => 0,
-                                'ativo' => 0
+                                'status' => 0
 				];
                                 $status_db = update($pdo, 'produtos', $dados_atualizados, 'id_produto='.$produto['id_produto'].''); 
                                 $status = 'estoque_zerado';
@@ -92,7 +95,7 @@
 			    if ($produto['custo'] < 0){
 				    $dados_atualizados = 
 					    [
-						'custo' => 0
+						'preco' => 0
 					    ];	
                                 $status_db = update($pdo, 'produtos', $dados_atualizados, 'id_produto='.$produto['id_produto'].''); 
 			  }
@@ -103,19 +106,21 @@
                             else{
                                 $atividade = 'Inativo';
                             }
-                            $conteudo_tabela .= '<tr class='.$status.'><td>'.$produto['id_produto'].'</td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['custo'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>';
+                            $conteudo_tabela .= '<tr class='.$status.'><td>img src="'.$produto['imagem'].' alt="Imagem""></td><td>'.$produto['id_produto'].'</td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>';
                         } 
                         echo $conteudo_tabela;
-                    ?>
+                ?>
                     </tbody>
                 </table>
 </main>
 
 
+<h1>Produtos sem estoque</h1>
         <section class="box-produtos-abaixo">
            <table>
                     <thead>
                         <tr>
+                            <th>Imagem</th>
                             <th>ID</th>
                             <th>Nome</th>
                             <th>PN</th>
