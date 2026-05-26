@@ -43,13 +43,13 @@ th
     margin: 0;
     top: 0;
     z-index: 2;
-    background-color :#60a5fa;
+    background-color :rgb(96, 105, 116);
 
     color: white;
 
     font-size: 15px;
     border-bottom: 10px solid var(--cor-primaria);
-    border-style: outset;
+    border-style: none;
     border-color:  #5ae24e;
 
 
@@ -72,7 +72,7 @@ table
 }
 
 h4{
-    margin-bottom: 50px;
+    margin-top: 55px;
     color: #1e3a8a;
 }
 
@@ -84,7 +84,7 @@ h4{
     border-radius: 10px;
     overflow-y: auto;
 
-    box-shadow: 12px 10px 13px #000000a2;
+    box-shadow: 12px 10px 13px rgba(0, 27, 107, 0.712);
 
     transition: 0.5s;
 }
@@ -137,9 +137,9 @@ h4{
 .box-produtos-abaixo
 {
     margin-top: 50px;
-    width: 1110px;
-    min-height: 640px;
-    max-height: 640px;
+    width: 1225px;
+    min-height: 745px;
+    max-height: 745px;
     border-radius: 10px;
     overflow-y: auto;
     box-shadow: 12px 12px 13px rgba(0, 27, 107, 0.712);
@@ -151,5 +151,32 @@ h4{
 }
 
 h1{
-    color: #5ae24e;
+    color: #1e3a8a;
+    margin-left: 300px;
+    margin-top: 150px;
 }
+
+.bi-boxes{
+  margin-left: 185px;
+  color: #91c1f7;
+  font-size: 55px;
+}
+
+.bi-exclamation-circle{
+ margin-left: 185px;
+ color: #f7e291;
+ font-size: 55px;
+}
+
+.bi-exclamation-triangle{
+ margin-left: 185px;
+ color: #f79191;
+ font-size: 55px;
+}
+
+.bi-currency-dollar{
+ margin-left: 185px;
+ color: #94f791;
+ font-size: 55px;
+}
+
