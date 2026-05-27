@@ -15,7 +15,7 @@ body{
     overflow-y: auto;
     box-shadow: 12px 12px 13px rgba(0, 27, 107, 0.712);
 
-    background-color: #60a5fa;
+    background-color: #F1f7fd;
 
     border-bottom: 10px solid var(--cor-primaria);
     margin: 50px auto;
@@ -31,7 +31,7 @@ td
 {
     border-bottom: 2px solid var(--cor-detalhes);
     height: 55px;
-    border-color: #5ae24e;
+   
     color: #1e3a8a;
     border-bottom: 2px solid #5ae24e;
 } 
@@ -50,7 +50,7 @@ th
     font-size: 15px;
     border-bottom: 10px solid var(--cor-primaria);
     border-style: none;
-    border-color:  #5ae24e;
+    
 
 
 }
@@ -60,7 +60,6 @@ table
     width: 1225px;
     background-color:  rgb(240, 240, 240); 
     border-style: solid;
-    border-color:  #5ae24e;
     border-collapse: collapse;
     align-items: center;
 }
@@ -74,6 +73,7 @@ table
 h4{
     margin-top: 55px;
     color: #1e3a8a;
+    padding: 10px;
 }
 
 .card-box{
@@ -92,7 +92,8 @@ h4{
 .produtos-box, 
 .produtosbaixos-box, 
 .produtosabaixo-box,
-.valor-box
+.valor-box,
+.produtos-inativos
 {
     background-color: #f3f3f3;
 }
@@ -115,6 +116,9 @@ h4{
 } 
 .valor-box:hover{
     box-shadow: 12px 10px 13px #94f791;
+}
+.produtos-inativos:hover{
+    box-shadow: 12px 10px 13px #2f3834;
 }
 
 .estoque_baixo{
@@ -144,7 +148,7 @@ h4{
     overflow-y: auto;
     box-shadow: 12px 12px 13px rgba(0, 27, 107, 0.712);
 
-    background-color: #60a5fa;
+    background-color: #F1f7fd;
 
     border-bottom: 10px solid var(--cor-primaria);
     margin: 50px auto;
@@ -153,7 +157,9 @@ h4{
 h1{
     color: #1e3a8a;
     margin-left: 300px;
-    margin-top: 150px;
+    margin-top: 220px;
+
+
 }
 
 .bi-boxes{
@@ -180,3 +186,9 @@ h1{
  font-size: 55px;
 }
 
+
+.bi-ban{
+ margin-left: 185px;
+ color: #2f3834;
+ font-size: 55px;
+}
