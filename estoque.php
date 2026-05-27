@@ -46,6 +46,12 @@
     <i class="bi bi-currency-dollar"></i>
      <h4>Valor total</h4>
  </div>
+
+  <div class="card-box produtos-inativos">
+    <i class="bi bi-ban"></i>
+     <h4>Inativos</h4>
+ </div>
+ 
  
 </div>
 
@@ -68,12 +74,14 @@
                     </thead>
 
 
-                    
+                  <tbody>  
                     <?php
                         require_once 'crud.php';
                         $produtos = readAll($pdo, 'produtos');
-                        $conteudo_tabela = null;
+                        $conteudo_tabela = null; 
+                        $conteudo_tabela_zerada = null;                      
                         foreach($produtos as $produto){
+                            $zerado = false;
                             if ($produto['estoque'] > 50 ){
                                 $status = 'estoque_padrao';
                             }
@@ -87,27 +95,33 @@
                                 $dados_atualizados = [
                                 'estoque' => 0,
                                 'status' => 0
-				];
+				                ];
                                 $status_db = update($pdo, 'produtos', $dados_atualizados, 'id_produto='.$produto['id_produto'].''); 
                                 $status = 'estoque_zerado';
-			    }
+                                
+			                }
 
-			    if ($produto['custo'] < 0){
-				    $dados_atualizados = 
-					    [
-						'preco' => 0
-					    ];	
+			              if ($produto['custo'] < 0){
+				            $dados_atualizados = 
+                                    [
+                                    'preco' => 0
+                                    ];	
                                 $status_db = update($pdo, 'produtos', $dados_atualizados, 'id_produto='.$produto['id_produto'].''); 
-			  }
+			                }
                             $atividade = null;
-                            if ($produto['ativo'] == TRUE){
+                            if ($produto['status'] == TRUE){
                                 $atividade = 'Ativo';                            
                                 }
                             else{
                                 $atividade = 'Inativo';
                             }
-                            $conteudo_tabela .= '<tr class='.$status.'><td>img src="'.$produto['imagem'].' alt="Imagem""></td><td>'.$produto['id_produto'].'</td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>';
-                        } 
+                            if ($zerado == false){
+                                $conteudo_tabela .= '<tr class='.$status.'><td>img src="'.$produto['imagem'].' alt="Imagem""></td><td>'.$produto['id_produto'].'</td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>';
+                            }
+                            else{
+                                $conteudo_tabela_zerada .= '<tr class='.$status.'><td>img src="'.$produto['imagem'].' alt="Imagem""></td><td>'.$produto['id_produto'].'</td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>'; 
+                            }
+                        }
                         echo $conteudo_tabela;
                 ?>
                     </tbody>
@@ -131,6 +145,9 @@
 			                <th>Descrição</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <?=$conteudo_tabela_zerada?>
+                    </tbody>
                     </table>
 </section>
     </body>
