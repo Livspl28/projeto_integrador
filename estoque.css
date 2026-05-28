@@ -1,73 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 body{
-    color:black !important;
-    font-family:montserrat, sans-serif;
+    background-color: #F1f7fd;
+    color: white;
+    font-family: Montserrat, sans-serif;
+}
+
+.box-tabela 
+{
+    margin-top: 50px;
+    width: 1225px;
+    height: 745px;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: 12px 12px 13px rgba(0, 27, 107, 0.712);
+
+    background-color: #F1f7fd;
+
+    border-bottom: 10px solid var(--cor-primaria);
+    margin: 50px auto;
+}
+
+
+tr{
+     border-style: outset;
+     border-color:  #5ae24e;
+}
+
+td
+{
+    border-bottom: 2px solid var(--cor-detalhes);
+    height: 55px;
+   
+    color: #1e3a8a;
+    border-bottom: 2px solid #5ae24e;
+} 
+
+th
+{
+    height: 55px;
+    position: sticky;
+    margin: 0;
+    top: 0;
+    z-index: 2;
+    background-color :rgb(96, 105, 116);
+
+    color: white;
+
+    font-size: 15px;
+    border-bottom: 10px solid var(--cor-primaria);
+    border-style: none;
     
+
+
 }
 
-button a{
+table
+{
+    width: 1225px;
+    background-color:  rgb(240, 240, 240); 
+    border-style: solid;
+    border-collapse: collapse;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+h4{
+    margin-top: 55px;
+    color: #1e3a8a;
+    padding: 10px;
+}
+
+.card-box{
+    margin-top: 50px;
+    width: 250px;
+    min-height: 125px;
+
+    border-radius: 10px;
+    overflow-y: auto;
+
+    box-shadow: 12px 10px 13px rgba(0, 27, 107, 0.712);
+
+    transition: 0.5s;
+}
+
+.produtos-box, 
+.produtosbaixos-box, 
+.produtosabaixo-box,
+.valor-box,
+.produtos-inativos
+{
+    background-color: #f3f3f3;
+}
+
+.card-box:hover{
+  background: #f3f3f3;
+    border-radius: 10px;
+    transition: 0.5s;
+    transform: scale(1.03);
+}
+
+.produtos-box:hover{
+    box-shadow: 12px 10px 13px #91c1f7;
+}
+.produtosbaixos-box:hover{
+    box-shadow: 12px 10px 13px #f7e291;
+} 
+.produtosabaixo-box:hover{
+    box-shadow: 12px 10px 13px #f79191;
+} 
+.valor-box:hover{
+    box-shadow: 12px 10px 13px #94f791;
+}
+.produtos-inativos:hover{
+    box-shadow: 12px 10px 13px #2f3834;
+}
+
+.estoque_baixo{
+    color: yellow !important;
+}
+
+.estoque_mt_baixo{
+    color:red !important;
+}
+
+.estoque_zerado{
+    color:darkred !important;
+}
+
+.msg_erro{
     color:black;
+    text-align:center;
 }
 
-header{
-    margin-top:-50px !important;
+.box-produtos-abaixo
+{
+    margin-top: 50px;
+    width: 1225px;
+    min-height: 745px;
+    max-height: 745px;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: 12px 12px 13px rgba(0, 27, 107, 0.712);
+
+    background-color: #F1f7fd;
+
+    border-bottom: 10px solid var(--cor-primaria);
+    margin: 50px auto;
 }
 
 h1{
     color: #1e3a8a;
-  font-weight: 600;
+    margin-left: 300px;
+    margin-top: 220px;
+
+
 }
 
-.box{
-    text-align:center;
-    color: rgba(30, 59, 138, 0.795);
-    font-weight: 500;
-    font-size: 20px;
-
-    width:70%;
-    margin-left:400px;
-    margin-top:50px;
-    gap:50px;
-    
-    padding: 2em;
-    min-height:700px;
-    display: flex !important;
-    flex-direction:column;
-    
-    
-    border: 2px solid #1e3a8a;
-    border-radius: 10px;
-    box-shadow: 12px 10px 13px rgba(0, 27, 107, 0.712);
+.bi-boxes{
+  margin-left: 185px;
+  color: #91c1f7;
+  font-size: 55px;
 }
 
-.margem_baixo{
-    margin-bottom:40px;
+.bi-exclamation-circle{
+ margin-left: 185px;
+ color: #f7e291;
+ font-size: 55px;
 }
 
-.box2{
-    margin-top:50px;
+.bi-exclamation-triangle{
+ margin-left: 185px;
+ color: #f79191;
+ font-size: 55px;
 }
 
-.box3 button{
-   
-    margin-left: 30px;
-    background-color: #5ae24e71;
-    border-style: inset;
-
-    border-color: #5ae24e;
-    margin-top: 250px;
-    color: #1e3a8a;
-
-    font-family: Montserrat, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.box3 button:hover{
-    background-color: #5ae24ebd;
-    border-radius: 2px;
-    transition: 0.4s;
-    border-style: outset;
+.bi-currency-dollar{
+ margin-left: 185px;
+ color: #94f791;
+ font-size: 55px;
 }
 
 
-
+.bi-ban{
+ margin-left: 185px;
+ color: #2f3834;
+ font-size: 55px;
+}
