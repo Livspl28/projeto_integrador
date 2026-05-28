@@ -1,6 +1,6 @@
 <?php
 
-
+    $pagina = 'estoque';
 
     $titulo = 'Byteware';
     $css = './css/estoque.css';
@@ -61,9 +61,8 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Imagem</th>
-                            <th>ID</th>
-                            <th>Nome</th>
+                            
+                            <th>Produto</th>
                             <th>PN</th>
                             <th>Estoque</th>
                             <th>Status</th>
@@ -101,7 +100,7 @@
                                 
 			                }
 
-			              if ($produto['custo'] < 0){
+			              if ($produto['preco'] < 0){
 				            $dados_atualizados = 
                                     [
                                     'preco' => 0
@@ -116,10 +115,10 @@
                                 $atividade = 'Inativo';
                             }
                             if ($zerado == false){
-                                $conteudo_tabela .= '<tr class='.$status.'><td>img src="'.$produto['imagem'].' alt="Imagem""></td><td>'.$produto['id_produto'].'</td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>';
+                                $conteudo_tabela .= '<tr class='.$status.'><td><img src="'.$produto['imagem'].'" width="80" alt="Imagem""></td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>';
                             }
                             else{
-                                $conteudo_tabela_zerada .= '<tr class='.$status.'><td>img src="'.$produto['imagem'].' alt="Imagem""></td><td>'.$produto['id_produto'].'</td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>'; 
+                                $conteudo_tabela_zerada .= '<tr class='.$status.'><td><img src="'.$produto['imagem'].'" width="80" alt="Imagem""></td><td>'.$produto['nome_produto'].'</td><td>'.$produto['pn'].'</td><td>'.$produto['estoque'].'</td><td>'.$atividade.'</td><td>'.$produto['categoria'].'</td><td>'.$produto['preco'].'</td><td><form action="descricaoPro.php" method="GET"><button value='.$produto['id_produto'].' name="p_editar"><i class="bi bi-eye"></i></button></form></td>'; 
                             }
                         }
                         echo $conteudo_tabela;
@@ -134,9 +133,7 @@
            <table>
                     <thead>
                         <tr>
-                            <th>Imagem</th>
-                            <th>ID</th>
-                            <th>Nome</th>
+                            <th>Produto</th>
                             <th>PN</th>
                             <th>Estoque</th>
                             <th>Status</th>
