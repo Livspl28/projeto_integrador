@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+.formcad {
+    margin-left: -10px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 90%;
+    height: 80%;
+    justify-content: center;
+}
+
+.formcad input {
+    padding: 10px;
+    border: 1px solid #B185DB;
+    border-radius: 15px;
+}
+
+.formcad input:focus {
+    border-color: #815AC0;
+    outline: none;
+}
+
+.formcad input::placeholder {
+    color: #815AC0;
+}
