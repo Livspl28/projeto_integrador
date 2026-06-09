@@ -12,7 +12,7 @@
     --cor-primaria: #1E3A8A;
     --cor-secundaria: #60A5FA;
     --cor-detalhes: #5AE24E;
-    --cor-fundo: #f1f5fd;
+    --cor-fundo: #e6eeff;
 }
 
 
@@ -35,7 +35,7 @@ body
     align-items: center;
     justify-content: center;
     gap: 80px;
-
+    z-index: 1000;
 }
 
 .line
@@ -68,7 +68,7 @@ a
     display: flex;
 }
 
-.carrinho
+.carrinhos
 {
     font-size: 30px;
     transition: 0.3s;
@@ -91,7 +91,7 @@ a
 {
     display: flex;
     width: 140px;
-    height: 30px;
+    height: 31px;
     background: #ffffff;
     color: var(--cor-primaria);
     border-radius: 0px 12px 12px 0px;
@@ -149,10 +149,50 @@ a
     background: var(--cor-secundaria);
 }
 
-.carrinho:hover
+.carrinhos:hover
 {
     transform: scale(1.05);
 }
+
+.user{
+    display: flex;
+    gap: 40px;
+    color: white;
+    align-items: center;
+}
+
+.perfil
+{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.perfil h3{
+    font-size: 15px;
+}
+
+.sair
+{
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+.sair:hover{
+    transform: scale(1.1);
+}
+
+.foto
+{
+    width: 50px;
+}
+
+.name{
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 17.5px;
+}
+
 
 /* ▼ ================================================================ SIDEBAR ================================================================ ▼  */
 
@@ -163,7 +203,7 @@ a
     padding: 33px 1px;
     height: 85px;
     width: 230px;
-    background-color: var(--cor-fundo);
+    background-color: #dee8fe;
 }
 
 .side
@@ -185,6 +225,24 @@ a
     margin-bottom: 20px;   
 }
 
+.prf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prf h3{
+    color: var(--cor-fundo);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.prf img{
+    width: 50px;
+    height: 50px;
+    margin-top: 12px;
+}
+
 .ancoras
 {
     margin-top: 100px;
@@ -202,6 +260,7 @@ a
     font-family: 'Montserrat';
     font-weight: 500;
     transition: 0.3s;
+    padding: 31px;
 }
 
 .ancoras a i
@@ -214,7 +273,35 @@ a
 
 .ancoras a:hover
 {
-    color: var(--cor-botao);
+    color: white;
+    transform: translateX(10px);
+}
+
+.ancoras a.active:hover
+{
+    color: var(--cor-secundaria);
+    background-color: #dee8fe;
+}
+
+.logout
+{
+    align-items: end;
+}
+
+.logout a{
+    display: flex;
+    gap: 15px;
+    color: var(--cor-fundo);
+    margin-top: 45px;
+    padding: 17.5px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.logout a:hover{
+    color: white;
     transform: translateX(10px);
 }
 
