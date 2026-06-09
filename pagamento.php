@@ -20,8 +20,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cvv = trim($_POST['cvv'] ?? '');
     $nome_titular = trim($_POST['nome_titular'] ?? '');
 
-    if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $erro = 'E-mail inválido';
+    if(filter_var($email, FILTER_VALIDATE_EMAIL) === false && isset($email)){
+        $erro = 'Email inválido';
     } elseif(empty($forma_pagamento)) {
         $erro = 'Selecione uma forma de pagamento';
     } elseif(empty($numero_cartao) || strlen(preg_replace('/\D/', '', $numero_cartao)) < 13) {
@@ -58,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'id_cliente' => $id_cliente,
                     'id_produto' => $id_produto
                 ];
-                create($pdo, 'compra', $dados_compra);
+                create($pdo, 'compras', $dados_compra);
             }
 
             unset($_SESSION['produtos']);
@@ -90,52 +90,68 @@ require_once 'partials/navbar.php';
 
     <form method="POST" action="pagamento.php">
         <h4>E-mail de usuário: </h4>
-        <label class="que">
+        <div class="que">
             <input type="email" name="email" placeholder="seu@email.com" value="<?php echo htmlspecialchars($email); ?>" required>
-        </label>
+        </div>
 
         <h4>Escolha a forma de pagamento: </h4>
-        <label class="radio-text">
+        <div class="radio-text">
             <input type="radio" name="forma_pagamento" value="Debito" <?php echo $forma_pagamento === 'Debito' ? 'checked' : ''; ?> required>
             Débito
-        </label>
+        </div>
 
-        <label class="radio-text">
+        <div class="radio-text">
             <input type="radio" name="forma_pagamento" value="Credito" <?php echo $forma_pagamento === 'Credito' ? 'checked' : ''; ?>>
             Crédito
-        </label>
+        </div>
 
-        <label class="radio-text">
+        <div class="radio-text">
             <input type="radio" name="forma_pagamento" value="Pix" <?php echo $forma_pagamento === 'Pix' ? 'checked' : ''; ?>>
             Pix
-        </label>
+        </div>
 
-        <label class="radio-text">
+        <div class="radio-text">
             <input type="radio" name="forma_pagamento" value="Boleto" <?php echo $forma_pagamento === 'Boleto' ? 'checked' : ''; ?>>
             Boleto
-        </label>
+        </div>
+
+        <!-- Aqui vai ter a verificação de se foi selecionado ou não o crédio -->
+
+        <h4>Parcelas: </h4>
+        <div class="parcelas">
+            <select name="parcelas" id="parcelas" class="pcl">
+                <option value="">Opções de Parcela</option>
+                <option value="2">2x sem Juros</option>
+                <option value="3">3x sem Juros</option>
+                <option value="4">4x sem Juros</option>
+                <option value="6">6x sem Juros</option>
+                <option value="8">8x sem Juros</option>
+                <option value="10">10x sem Juros</option>
+                <option value="12">12x sem Juros</option>
+            </select>
+        </div>
 
         <h4>Número do cartão: </h4>
-        <label class="que">
+        <div class="que">
             <input type="text" name="numero_cartao" placeholder="1234 1234 1234 1234" value="<?php echo htmlspecialchars($numero_cartao); ?>" required>
-        </label>
+        </div>
 
         <h4>Data de validade: </h4>
-        <label class="que"> 
+        <div class="que"> 
             <input type="text" name="data_validade" placeholder="MM/AA" value="<?php echo htmlspecialchars($data_validade); ?>" required>
-        </label>
+        </div>
 
         <h4>CVV: </h4>
-        <label class="que">
+        <div class="que">
             <input type="text" name="cvv" placeholder="000" value="<?php echo htmlspecialchars($cvv); ?>" required>
-        </label>
+        </div>
 
         <h4>Nome do Titular do cartão: </h4>
-        <label class="que">
+        <div class="que">
             <input type="text" name="nome_titular" placeholder="Nome completo" value="<?php echo htmlspecialchars($nome_titular); ?>" required>
-        </label>
+        </div>
 
-        <button type="submit">Pagar</button>
+        <button type="submit" class="pagode">Pagar</button>
     </form>
 </section>
 
